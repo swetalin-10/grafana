@@ -287,3 +287,15 @@ it('does not select the panel when clicking interactive content', async () => {
   await user.pointer({ keys: '[MouseLeft>]', target: screen.getByText('Non-interactive') });
   expect(onSelect).toHaveBeenCalledTimes(1);
 });
+
+it('renders the description info button with an accessible name when description is set', () => {
+  setup({ description: '<p>Some panel description</p>' });
+
+  expect(screen.getByLabelText('Panel description')).toBeInTheDocument();
+});
+
+it('does not render the description info button when description is empty', () => {
+  setup({ description: '' });
+
+  expect(screen.queryByLabelText('Panel description')).not.toBeInTheDocument();
+});

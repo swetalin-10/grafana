@@ -15,6 +15,7 @@ type TitleItemProps = {
   href?: string;
   target?: LinkTarget;
   title?: string;
+  'aria-label'?: string;
 };
 
 type TitleItemElement = HTMLAnchorElement & HTMLButtonElement;
