@@ -152,6 +152,7 @@ export function RowItemRenderer({ model }: SceneComponentProps<RowItem>) {
                     ? t('dashboard.rows-layout.row.expand', 'Expand row {{title}}', { title })
                     : t('dashboard.rows-layout.row.collapse', 'Collapse row {{title}}', { title })
                 }
+                aria-expanded={!isCollapsed}
                 data-testid={selectors.components.DashboardRow.toggle(title)}
               >
                 <Icon name={isCollapsed ? 'angle-right' : 'angle-down'} />

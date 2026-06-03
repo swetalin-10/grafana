@@ -73,6 +73,8 @@ module.exports = {
     '@bsull/augurs': '<rootDir>/public/test/mocks/augurs.ts',
     // Mock @grafana/assistant to prevent initialization errors in tests
     '^@grafana/assistant$': '<rootDir>/public/test/mocks/assistant.ts',
+    // Mock @grafana/prometheus — workspace package has no built artifacts in local dev
+    '^@grafana/prometheus$': '<rootDir>/public/test/mocks/prometheus.ts',
   },
   // Log the test results with dynamic Loki tags. Drone CI only
   reporters: ['default', ['<rootDir>/public/test/log-reporter.js', { enable: process.env.DRONE === 'true' }]],
